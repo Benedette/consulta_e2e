@@ -13,7 +13,7 @@ const showData = (result)=>{
 e2e.addEventListener("blur",(e)=>{
     let search = e2e.value
 
-    fetch(`https://api.mercadopago.com/pos/${search}?access_token=APP_USR-3703711902928676-012817-ad98593253d083aca15cdd0680a9a52f-519628608`)
+    fetch(`https://internal-api.mercadopago.com/v1/payins/search?type=payin&external_reference.end_to_end_id=${search}`)
 
     .then(response =>{ response.json()
         .then( data => window.alert(JSON.stringify(data)))
