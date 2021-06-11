@@ -19,7 +19,7 @@ e2e.addEventListener("blur",(e)=>{
         cache: 'default'
     }
 
-    fetch(`https://internal-api.mercadopago.com/v1/payins/search?type=payin&external_reference.end_to_end_id=${search}`, options)
+    fetch(`https://internal-api.mercadopago.com/v1/payins/search?type=payin&external_reference.end_to_end_id=${search}`,{headers: {'Access-Control-Allow-Origin':'https://internal-api.mercadopago.com/'}}, options)
     .then(response =>{ response.json()
         .then( data => showData(data))
     })
