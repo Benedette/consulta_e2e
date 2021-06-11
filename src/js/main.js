@@ -1,4 +1,6 @@
-const cep = document.querySelector("#cep")
+
+const e2e = document.querySelector("#e2e")
+
 
 const showData = (result)=>{
     for(const campo in result){
@@ -9,17 +11,15 @@ const showData = (result)=>{
 }
 
 
-
-
-cep.addEventListener("blur",(e)=>{
-    let search = cep.value.replace("-","")
+e2e.addEventListener("blur",(e)=>{
+    let search = e2e.value
     const options = {
         method: 'GET',
         mode: 'cors',
         cache: 'default'
     }
 
-    fetch(`https://viacep.com.br/ws/${search}/json/`, options)
+    fetch(`https://internal-api.mercadopago.com/v1/payins/search?type=payin&external_reference.end_to_end_id=${search}`,{headers: {'Access-Control-Allow-Origin': 'https://internal-api.mercadopago.com/'}}, options)
     .then(response =>{ response.json()
         .then( data => showData(data))
     })
