@@ -19,7 +19,7 @@ e2e.addEventListener("blur",(e)=>{
         cache: 'default'
     }
 
-    fetch(`https://api.mercadopago.com/pos/${search}?access_token=APP_USR-3703711902928676-012817-ad98593253d083aca15cdd0680a9a52f-519628608`,{headers: {'Access-Control-Allow-Origin':'https://internal-api.mercadopago.com/'}}, options)
+    fetch(`https://api.mercadopago.com/pos/${search}?access_token=APP_USR-3703711902928676-012817-ad98593253d083aca15cdd0680a9a52f-519628608`,{headers: {'Access-Control-Allow-Origin':'https://api.mercadopago.com/'}}, options)
     .then(response =>{ response.json()
         .then( data => showData(data))
     })
