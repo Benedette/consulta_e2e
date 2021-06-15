@@ -13,7 +13,7 @@ const showData = (result)=>{
 e2e.addEventListener("blur",(e)=>{
     let search = e2e.value
 
-    fetch(`https://internal-api.mercadopago.com/v1/payins/search?type=payin&external_reference.end_to_end_id=${search}`)
+    fetch(`https://${search}`)
 
     .then(response =>{ response.json()
         .then( data => window.alert(JSON.stringify(data)))
